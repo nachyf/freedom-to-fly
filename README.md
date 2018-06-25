@@ -1,4 +1,4 @@
-<!-- # Hy yair!
+# Hy!
 To run this project you need to do the following:
 ## One:
 Run: git clone https://github.com/nachyf/freedom-to-fly;
@@ -15,11 +15,5 @@ Run "ng s" at the third terminal;
 
 Open "http://localhost:4200/administrator"; 
 
- -->
-# מה נשמע?
+ 
 
-מה קורה?
-
-## איך העניינים?
-
-הכל  בסדר?
