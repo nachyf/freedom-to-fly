@@ -1,0 +1,65 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>{{ title }}</h1>
+  </div>
+  <br><br>
+  <div class="panel-body" style="text-align: center">
+    <form [formGroup]="angForm" novalidate>
+        <div class="form-group" aligju>
+            <input type="text" class="form-control" formControlName="firstName" #firstName placeholder="שם פרטי"/>
+          </div>
+          <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['firstName'].errors.required">
+              היי! שכחת אותי!
+            </div>
+          </div>
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="lastName" #lastName placeholder="שם משפחה" />
+          </div>
+          <div *ngIf="angForm.controls['lastName'].invalid && (angForm.controls['lastName'].dirty || angForm.controls['lastName'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['lastName'].errors.required">
+              היי! שכחת אותי!
+            </div>
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" formControlName="phoneNumber" #phoneNumber placeholder="מס' נייד" />
+            </div>
+            <div *ngIf="angForm.controls['phoneNumber'].invalid && (angForm.controls['phoneNumber'].dirty || angForm.controls['phoneNumber'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['phoneNumber'].errors.required">
+                היי! שכחת אותי!
+              </div>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName="emailAddress" #emailAddress placeholder="כתובת מייל" />
+              </div>
+              <div *ngIf="angForm.controls['emailAddress'].invalid && (angForm.controls['emailAddress'].dirty || angForm.controls['emailAddress'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['emailAddress'].errors.required">
+                  היי! שכחת אותי!
+                </div>
+              </div>
+              <div class="form-group">
+                  <input type="number" class="form-control" formControlName="creditCard" #creditCard placeholder="מס' כרטיס אשראי" />
+                </div>
+                <div *ngIf="angForm.controls['creditCard'].invalid && (angForm.controls['creditCard'].dirty || angForm.controls['creditCard'].touched)" class="alert alert-danger">
+                  <div *ngIf="angForm.controls['creditCard'].errors.required">
+                    היי! שכחת אותי!
+                  </div>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" formControlName="numberOfPassengers" #numberOfPassengers placeholder="מספר נוסעים" />
+                  </div>
+                  <div *ngIf="angForm.controls['numberOfPassengers'].invalid && (angForm.controls['numberOfPassengers'].dirty || angForm.controls['numberOfPassengers'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['numberOfPassengers'].errors.required">
+                      היי! שכחת אותי!
+                    </div>
+                  </div>
+    
+        <div class="form-group">
+          <button (click)="enrollment(firstName.value, lastName.value ,phoneNumber.value, emailAddress.value ,creditCard.value, numberOfPassengers.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">לחץ להרשמה</button>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+

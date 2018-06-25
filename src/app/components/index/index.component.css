@@ -1,0 +1,16 @@
+th{
+    text-align: center;
+    background-color: tan;
+    color: chocolate;
+
+}
+td{
+    background-color: cornsilk;
+}
+table, th,td,tr{
+    border: 0.2px solid #209cb2;
+}
+td:hover{background-color: lightcoral}
+input{text-align: center}
+div, input ,button{text-align: center}
+.fa .fa-search{direction: ltr}

@@ -1,0 +1,43 @@
+<div class="form-group input-group">
+    <div class="input-group-append">
+            <button class="btn btn-secondary" type="button"><i class="fa fa-search" dir="rtl"></i></button>
+        </div>
+<input type="text" placeholder="חפש לקוח" (keyup)="queryChange(r)" #r/></div>
+<br> <br>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+      <th>שם פרטי</th>
+      <th>שפ משפחה</th>
+      <th>מס' נייד</th>
+      <th>כתובת מייל</th>
+      <th>מס' אשראי</th>
+      <th>מס' נוסעים</th>
+      <th colspan="2">אפשרויות</th>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let customer of customers | filter:query">
+          <td>{{ customer.firstName  }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.phoneNumber  }}</td>
+          <td>{{ customer.emailAddress }}</td>
+          <td>{{ customer.creditCard  }}</td>
+          <td>{{ customer.numberOfPassengers }}</td>
+          <td><a [routerLink]="['/costumer-details', customer._id]"  class="btn btn-primary">לפרטי הלקוח</a></td>
+          <td><button (click)="deleteCustomer(customer._id)"  class="btn btn-danger">מחק לקוח</button></td>
+      </tr>
+  </tbody>
+</table>
+<!-- 
+<div data-src="https://cdn.pixabay.com/photo/2016/11/29/02/12/architecture-1866767_1280.jpg">
+    <div class="caption">
+        <h2>Venice</h2>
+        <div class="price">
+            FROM
+            <span>$1600</span>
+        </div>
+        <a href="#">LEARN MORE</a>
+    </div>
+</div> -->

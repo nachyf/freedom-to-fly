@@ -1,0 +1,42 @@
+<div class="form-group input-group">
+        <div class="input-group-append">
+                <button class="btn btn-secondary" type="button"><i class="fa fa-search" dir="rtl"></i></button>
+            </div>
+    <input type="text" placeholder="חפש יעד" (keyup)="queryChange(r)" #r/>
+    
+</div>
+
+
+<br><br>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+      <th>קוד טיסה</th>
+      <th>יעד</th>
+      <th>תאריך יציאה</th>
+      <th>תאריך חזרה</th>
+      <th>סטטוס</th>
+      <th>מחיר</th>
+      <th colspan="2">אפשרויות</th>
+  </tr>
+  </thead>
+  <!-- <select class="selectpicker">
+        <option *ngFor="let flight of flightSchedule">{{ flight.codeflight  }}</option>
+      </select> -->
+      
+
+
+
+  <tbody>
+      <tr *ngFor="let flight of flightSchedule | fightTarget:query">
+          <td>{{ flight.codeflight  }}</td>
+          <td>{{ flight.target }}</td>
+          <td>{{ flight.departure }}</td>
+          <td>{{ flight.back }}</td>
+          <td>{{ flight.status }}</td>
+          <td>{{ flight.price }}</td>
+          <td><a [routerLink]="['/edit', flight._id]" class="btn btn-primary">עריכה</a></td>
+          <td><button (click)="deleteFlight(flight._id)"  class="btn btn-danger">מחיקה</button></td>
+      </tr>
+  </tbody>
+</table>
