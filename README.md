@@ -7,10 +7,8 @@ Write: cd freedom-to-fly;
 ## Three:
 Run "npm i";
 ## Four
-Run "mongod" in one terminal;
-## Five
 Run "nodemon server" in terminal two;
-## Six:
+## Five
 Run "ng s" at the third terminal;
 
 Open "http://localhost:4200/administrator"; 

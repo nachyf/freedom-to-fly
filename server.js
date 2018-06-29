@@ -3,12 +3,12 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       mongoose = require('mongoose'),
-      config = require('./config/DB'),
-      customersRoutes = require('./expressRoutes/customersRoutes'),
-      flightRoutes = require('./expressRoutes/flightRoutes');
+      db = "mongodb://flights-website:flights-website1@ds223760.mlab.com:23760/freedom-to-fly",
+      customersRoutes = require('./server/customersRoutes'),
+      flightRoutes = require('./server/flightRoutes');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.DB).then(
+mongoose.connect(db).then(
     () => {console.log('Database is connected') },
     err => { console.log('Can not connect to the database'+ err)}
   );

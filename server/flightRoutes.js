@@ -3,7 +3,7 @@ var app = express();
 var flightRoutes = express.Router();
 
 // Require Item model in our routes module
-var Flight = require('../models/Flight');
+var Flight = require('./Flight');
 
 // Defined store route
 flightRoutes.route('/add').post(function (req, res) {
